@@ -39,7 +39,7 @@ if "current_food_data" not in st.session_state:
 
 # ------------------- CACHED FUNCTIONS ------------------- #
 @st.cache_data(ttl=3600)  # Cache for 1 hour
-def get_gemini_response(_model, prompt, image=None):
+def get_gemini_response(_model, prompt, _image=None):
     """Cached function for Gemini API calls"""
     if image:
         return _model.generate_content([prompt, image])
